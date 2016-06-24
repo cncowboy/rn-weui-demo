@@ -1,0 +1,95 @@
+{
+  "name": "rn-weui-demo",
+  "version": "0.1.0",
+  "description": "Build your React Native with Webpack and Babel.",
+  "author": "Josh Habdas <jhabdas@gmail.com> (http://habd.as)",
+  "license": "MIT",
+  "keywords": [
+    "android",
+    "ios",
+    "javascript",
+    "mobile",
+    "native",
+    "react-native",
+    "starter-kit",
+    "webpack"
+  ],
+  "spm": {
+    "alias": {
+      "react-weui": "src/components/native/rn_weui/src"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src --format=node_modules/eslint-formatter-pretty --fix",
+    "build:web": "mkdir -p dist/; cp -r static/* dist/; webpack",
+    "start:web": "webpack-dev-server --colors --port 5000 --https --history-api-fallback --open",
+    "android-setup-port": "adb reverse tcp:8081 tcp:8080",
+    "start:ios": "rnws start --webpackConfigPath ./webpack.native.config.js --no-android",
+    "start:android": "rnws start --webpackConfigPath ./webpack.native.config.js --no-ios",
+    "bundle": "rnws bundle --webpackConfigPath ./webpack.native.config.js",
+    "test": "snyk test && npm run lint && npm run snyk-protect",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhabdas/react-native-webpack-starter-kit"
+  },
+  "engines": {
+    "node": ">=4 <7",
+    "npm": ">=2 <4"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-native": "0.27.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.5",
+    "immutable": "^3.8.1",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "redux-actions": "^0.10.0",
+    "redux-persist": "^3.2.2",
+    "redux-logger": "^2.6.1",
+    "react-native-image-picker": "^0.19.2",
+    "react-native-scrollable-tab-view": "^0.4.3",
+    "react-native-vector-icons": "^2.0.3",
+    "react-native-blur": "^0.7.11",
+    "react-native-overlay": "^0.4.2",
+    "react-native-stylekit": "0.0.3",
+    "react-native-swiper": "^1.4.3",
+    "react-relay": "^0.8.1",
+    "rn-weui": "^0.0.10",
+    "snyk": "^1.14.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-plugin-syntax-async-functions": "^6.5.0",
+    "babel-plugin-transform-regenerator": "^6.5.2",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-react-native": "^1.9.0",
+    "babel-relay-plugin": "^0.8.1",
+    "url-loader": "^0.5.7",
+    "file-loader": "^0.8.5",
+    "image-webpack-loader": "^1.8.0",
+    "isomorphic-loader": "^1.6.0",
+    "rn-image-loader": "^1.1.1",
+    "eslint": "~2.11.0",
+    "eslint-formatter-pretty": "^0.2.2",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^5.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "react-native-webpack-server": "^0.9.3",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "snyk": true
+}

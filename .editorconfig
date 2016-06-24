@@ -1,0 +1,33 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
+
+root = true
+
+# Unix-style newlines with a newline ending every file
+#[*]
+#end_of_line = lf
+#insert_final_newline = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+#[*.{js,jsx,css,less,json,py}]
+#charset = utf-8
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+spaces_around_brackets = none
+curly_bracket_next_line = true
+indent_brace_style = Allman
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
+indent_size = 2

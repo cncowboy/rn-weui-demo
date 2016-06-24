@@ -1,0 +1,6 @@
+patch:
+  'npm:ws:20160104':
+    - react-native > ws:
+        patched: '2016-05-19T04:21:15.342Z'
+version: v1.4.0
+ignore: {}
